@@ -1,11 +1,8 @@
-from lxml import html
 import requests
 from datetime import datetime
 import json 
 import smtplib
 from flask import Flask
-from flask import render_template
-from flask import request
 # https://www.tesla.com/inventory/used/ms?AUTOPILOT=AUTOPILOT&Year=2016,2017&arrangeby=plh&zip=95131
 
 def convert_vehicle_data_list_to_string(lst): 
