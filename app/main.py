@@ -109,6 +109,3 @@ def execute_watchlist_update():
     results = parse_car_profiles(curr_url_list)
 	send_email(results, "TESLA CPO Watchlist - "+str(len(results))+" items")
     return "Executed Watchlist Update"
-
-if __name__ == "__main__":
-    app.run()
