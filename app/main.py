@@ -64,7 +64,7 @@ def parse_car_profiles(url_list):
 			print(6)
 			price = vehicle_data["InventoryPrice"]
 			mileage = vehicle_data["Odometer"]
-			color = vehicle_data["PAINT"]
+			color = ",".join(vehicle_data["PAINT"])
 			history = vehicle_data["VehicleHistory"]
 			year = vehicle_data["Year"]
 			autopilot = ", ".join(vehicle_data["AUTOPILOT"])
@@ -82,7 +82,7 @@ def parse_car_profiles(url_list):
 				"vin": vin, 
 				"battery": battery,
 				"url": url, 
-				"dateTime": accessed_date_time
+				"updated_at": accessed_date_time
 			}
 			data.append(item)
 		except Exception as e: 
