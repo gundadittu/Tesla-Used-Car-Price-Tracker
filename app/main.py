@@ -60,8 +60,7 @@ def parse_car_profiles(url_list):
 			inventory_details =r""+inventory_details+"}" # properly end dictionary structure
 			print(inventory_details)
 			print(5)
-			json_inventory_details = json.loads(inventory_details)
-			vehicle_data = json_inventory_details["vehicle"]
+			vehicle_data = json.loads(inventory_details)
 			print(6)
 			price = vehicle_data["InventoryPrice"]
 			mileage = vehicle_data["Odometer"]
