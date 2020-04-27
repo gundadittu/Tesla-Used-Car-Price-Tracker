@@ -1,1 +1,1 @@
-web: gunicorn wsgi:app
+web: gunicorn --bind 0.0.0.0:3413 wsgi:app
