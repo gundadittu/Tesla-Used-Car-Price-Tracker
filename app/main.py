@@ -44,24 +44,26 @@ def parse_car_profiles(url_list):
 	for url in url_list:
 		try:  
 			page = requests.get(url)
+			print("1")
 			content = page.content
-
+			print(type(content))
+			print("2")
 			start_marker =  "\"vehicle\""
 			start_index = content.find(start_marker)
-
+			print("3")
 			token_index = content[start_index:].find("\"token\"")
 			end_index = start_index + token_index
-
+			print("4")
 			end_marker =  "}"
 			first_oc = find_first_char_occurrence(content[end_index:], end_marker)
 			end_index += first_oc if first_oc != None else 0 
-
+			print("5")
 			inventory_details = content[start_index: end_index]
 			inventory_details ="{"+inventory_details+"} }" # properly end dictionary structure
-
+			print("6")
 			json_inventory_details = json.loads(inventory_details)
 			vehicle_data = json_inventory_details["vehicle"]
-
+			print("7")
 			price = vehicle_data["InventoryPrice"]
 			mileage = vehicle_data["Odometer"]
 			color = vehicle_data["PAINT"]
