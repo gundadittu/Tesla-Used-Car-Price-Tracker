@@ -46,6 +46,7 @@ def parse_car_profiles(url_list):
 			page = requests.get(url)
 			print("1")
 			content = page.content
+			content = content.decode('utf8')
 			print(type(content))
 			print("2")
 			start_marker =  "\"vehicle\""
@@ -59,7 +60,7 @@ def parse_car_profiles(url_list):
 			end_index += first_oc if first_oc != None else 0 
 			print("5")
 			inventory_details = content[start_index: end_index]
-			inventory_details ="{"+inventory_details+"} }" # properly end dictionary structure
+			inventory_details =r"{"+inventory_details+"} }" # properly end dictionary structure
 			print("6")
 			json_inventory_details = json.loads(inventory_details)
 			vehicle_data = json_inventory_details["vehicle"]
