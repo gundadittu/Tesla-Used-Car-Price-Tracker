@@ -85,8 +85,11 @@ def parse_car_profiles(url_list):
 				"dateTime": accessed_date_time
 			}
 			data.append(item)
-		except: 
+		except Exception as e: 
+			print("||||||||||||||||||||")
 			print("Error with "+url)
+			print(e)
+			print("||||||||||||||||||||")
 			continue 
 
 	return data 
