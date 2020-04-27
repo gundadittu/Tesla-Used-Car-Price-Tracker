@@ -1,5 +1,5 @@
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 import json 
 import smtplib
 from flask import Flask
@@ -72,7 +72,8 @@ def parse_car_profiles(url_list):
 			vin = vehicle_data["VIN"]
 			battery = ", ".join(vehicle_data["BATTERY"])
 			print(7)
-			accessed_date_time = datetime.now().astimezone(timezone('US/Pacific')).strftime("%I:%M%p on %B %d, %Y")
+			accessed_date_time = datetime.now() - timedelta(hours=7, minutes=0)
+			accessed_date_time - accessed_date_time.strftime("%I:%M%p on %B %d, %Y")
 			item = { 
 				"price": price, 
 				"mileage": mileage, 
