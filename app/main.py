@@ -47,7 +47,7 @@ def parse_car_profiles(url_list):
 			content = content.decode('utf8')
 			print(1)
 			start_marker =  "\"vehicle\""
-			start_index = content.find(start_marker)+11
+			start_index = content.find(start_marker)+10
 			print(2)
 			token_index = content[start_index:].find("\"token\"")
 			end_index = start_index + token_index
