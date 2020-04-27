@@ -45,23 +45,23 @@ def parse_car_profiles(url_list):
 			page = requests.get(url)
 			content = page.content
 			content = content.decode('utf8')
-
+			print(1)
 			start_marker =  "\"vehicle\""
 			start_index = content.find(start_marker)
-
+			print(2)
 			token_index = content[start_index:].find("\"token\"")
 			end_index = start_index + token_index
-
+			print(3)
 			end_marker =  "}"
 			first_oc = find_first_char_occurrence(content[end_index:], end_marker)
 			end_index += first_oc if first_oc != None else 0 
-
+			print(4)
 			inventory_details = content[start_index: end_index]
 			inventory_details =r"{"+inventory_details+"} }" # properly end dictionary structure
-
+			print(5)
 			json_inventory_details = json.loads(inventory_details)
 			vehicle_data = json_inventory_details["vehicle"]
-
+			print(6)
 			price = vehicle_data["InventoryPrice"]
 			mileage = vehicle_data["Odometer"]
 			color = vehicle_data["PAINT"]
@@ -70,7 +70,7 @@ def parse_car_profiles(url_list):
 			autopilot = ", ".join(vehicle_data["AUTOPILOT"])
 			vin = vehicle_data["VIN"]
 			battery = ", ".join(vehicle_data["BATTERY"])
-
+			print(7)
 			accessed_date_time = datetime.now().strftime("%I:%M%p on %B %d, %Y")
 			item = { 
 				"price": price, 
