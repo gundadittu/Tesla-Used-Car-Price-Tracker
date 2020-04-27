@@ -104,8 +104,8 @@ curr_url_list = [
 
 app = Flask(__name__)
 
-@app.route("/", methods=['GET', 'POST'])
-def application():
+@app.route("/")
+def execute_watchlist_update():
     results = parse_car_profiles(curr_url_list)
 	send_email(results, "TESLA CPO Watchlist - "+str(len(results))+" items")
     return "Executed Watchlist Update"
