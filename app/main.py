@@ -72,7 +72,7 @@ def parse_car_profiles(url_list):
 			vin = vehicle_data["VIN"]
 			battery = ", ".join(vehicle_data["BATTERY"])
 			print(7)
-			accessed_date_time = datetime.now().strftime("%I:%M%p on %B %d, %Y")
+			accessed_date_time = datetime.now().astimezone(timezone('US/Pacific')).strftime("%I:%M%p on %B %d, %Y")
 			item = { 
 				"price": price, 
 				"mileage": mileage, 
