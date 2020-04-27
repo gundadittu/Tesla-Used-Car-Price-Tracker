@@ -73,7 +73,7 @@ def parse_car_profiles(url_list):
 			battery = ", ".join(vehicle_data["BATTERY"])
 			print(7)
 			accessed_date_time = datetime.now() - timedelta(hours=7, minutes=0)
-			accessed_date_time - accessed_date_time.strftime("%I:%M%p on %B %d, %Y")
+			accessed_date_time = accessed_date_time.strftime("%I:%M%p on %B %d, %Y")
 			item = { 
 				"price": price, 
 				"mileage": mileage, 
