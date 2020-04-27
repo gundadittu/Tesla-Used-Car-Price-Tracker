@@ -101,7 +101,7 @@ curr_url_list = [
 	"https://www.tesla.com/used/5YJSA1E11GF174829?region=CA&postal=94591&coord=38.1165,-122.2091&redirect=no",
 	"https://www.tesla.com/used/5YJSA1E12HF181290?region=CA&postal=94591&coord=38.1165,-122.2091&redirect=no", 
 	"https://www.tesla.com/used/5YJSA1E18GF156036?region=CA&postal=95131&coord=37.3902956,-121.8961047&redirect=no", 
-	'https://www.tesla.com/used/5YJSA1E18GF134778",
+	"https://www.tesla.com/used/5YJSA1E18GF134778",
 	"https://www.tesla.com/used/5YJSA1E15GF158259?region=CA&postal=95131&coord=37.3902956,-121.8961047&redirect=no"
 ]
 
